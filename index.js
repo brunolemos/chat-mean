@@ -12,7 +12,7 @@ app.set('port', (process.env.PORT || 3000))
 app.use(bodyParser.json())
 
 app.use(nodeSassMiddleware({
-  src: path.join(__dirname, 'app/sass'),
+  src: path.join(__dirname, 'app/assets/stylesheets'),
   dest: path.join(__dirname, 'public/css'),
   prefix: '/css',
   indentedSyntax: true,
@@ -22,6 +22,7 @@ app.use(nodeSassMiddleware({
 
 app.use(express.static(path.join(__dirname, 'public')))
 app.use('/lib', express.static(path.join(__dirname, 'bower_components')))
+app.use('/js/app.js', express.static(path.join(__dirname, 'app/app.js')))
 
 require('./app/routes/routes')(app)
 

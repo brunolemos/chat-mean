@@ -1,0 +1,13 @@
+#signup
+  h1.appname Chat
+
+  p.subtitle 
+    a(href='/login') Sign in&nbsp;
+    | or create an account
+
+  form(name='signupForm', ng-submit='signup()')
+    input.input-big(type='text', name='name', placeholder='Name', value='', required, autofocus, ng-model='name')
+    input.input-big(type='email', name='email', placeholder='E-mail', value='', required, ng-model='email')
+    input.input-big(type='password', name='password', placeholder='Password', value='', required, ng-model='password')
+    input.input-big(type='password', name='confirm_password', placeholder='Confirm password', value='', required, ng-model='confirm_password')
+    input.input-big(type='submit', value='Create an account')

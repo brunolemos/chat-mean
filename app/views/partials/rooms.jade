@@ -1,0 +1,15 @@
+#rooms
+  header.app-header
+    a(href='/logout').icon &#xE713;
+    h2.title Rooms
+    a(href='/new').icon &#xE710;
+  
+  section.rooms-container
+    ul.rooms
+      each room in rooms
+        li
+          a.room(href="{{'/room' room}}", class="{{roomClass room}}")
+            .avatar.img-rounded
+            .details
+              span.name #{room.name} &nbsp;
+              span.text #{room.description} &nbsp;
